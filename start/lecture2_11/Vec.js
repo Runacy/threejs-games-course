@@ -23,19 +23,23 @@ class Vec{
   }
 
   sub(pt){
-    this.x -= pt.x;
-    this.y -= pt.y;
+    this.x -= pt.x; // x1 - x2
+    this.y -= pt.y; // y1 - y2
 
     return this;
   }
 
   distanceTo(pt){
     const delta = this.clone().sub(pt);
+    console.log(this.clone());
+    console.log(pt);
+    console.log(delta);
 
-    return Math.sqrt( delta.x*delta.x + delta.y*delta.y );
+    return Math.sqrt( delta.x*delta.x + delta.y*delta.y ); // 2乗 + 2乗
   }
 
   angle() {
+    console.log(this);
   	const theta = Math.atan2( - this.y, - this.x ) + Math.PI;
 
 		return theta;
